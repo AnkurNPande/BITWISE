@@ -1,0 +1,37 @@
+#include<stdio.h>
+typedef unsigned int UINT;
+
+
+  int CountBits(UINT No)
+  {
+
+int iCnt = 0;
+int iDigit = 0;
+
+while(No != 0)
+{
+    iDigit = No % 2;
+
+    if(iDigit ==1)
+    {
+        iCnt++;
+
+    }
+    No = No / 2;
+}
+return iCnt;
+  }
+int main()
+{
+  UINT Value = 0;
+  int Ret = 0;
+
+  printf("Enter the number \n");
+  scanf("%d",&Value);
+
+  Ret = CountBits(Value);
+
+  printf("Number of bits which are ON are : %d\n",Ret);
+
+    return 0;
+}
